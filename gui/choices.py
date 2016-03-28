@@ -721,6 +721,19 @@ SFTP_LOG_FACILITY = (
     ('LOCAL7', _('Local 7')),
     )
 
+
+SYS_LOG_LEVEL = (
+    ('f_emerg', _('Emerg')),
+    ('f_alert', _('Alert')),
+    ('f_crit', _('Crit')),
+    ('f_err', _('Error')),
+    ('f_warning', _('Warning')),
+    ('f_notice', _('Notice')),
+    ('f_info', _('Info')),
+    ('f_debug', _('Debug')),
+    ('f_is_debug', _('Is_Debug')),
+    )
+
 DIRECTORY_SERVICE_CHOICES = (
     ('activedirectory', _('Active Directory')),
     ('domaincontroller', _('Domain Controller')),
