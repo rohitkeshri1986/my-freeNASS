@@ -924,14 +924,10 @@ class SettingsForm(ModelForm):
 
     def save(self):
         super(SettingsForm, self).save()
-        notifier_start_flag = False
-        if self.instance._original_stg_sysloglevel != self.instance.stg_sysloglevel:
-            notifier_start_flag = True
-        if self.instance._original_stg_syslogserver != self.instance.stg_syslogserver:
-            notifier_start_flag = True
-
-        if notifier_start_flag == True:
+        if (self.instance._original_stg_sysloglevel != self.instance.stg_sysloglevel or
+                self.instance._original_stg_syslogserver != self.instance.stg_syslogserver):
             notifier().restart("syslogd")
+
         notifier().reload("timeservices")
 
     def done(self, request, events):
