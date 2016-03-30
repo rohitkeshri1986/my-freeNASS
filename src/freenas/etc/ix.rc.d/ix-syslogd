@@ -68,7 +68,7 @@ __EOF__
 	" | \
 	while eval read -r $g; do
 		if [ -n "${stg_sysloglevel}" ]; then
-			sysloglevel=$(echo ${stg_sysloglevel})
+			sysloglevel=${stg_sysloglevel}
 {
 cat << __EOF__
 log { source(src);  filter(${sysloglevel}); destination(loghost); };
